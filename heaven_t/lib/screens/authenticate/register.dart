@@ -60,7 +60,7 @@ class _RegisterState extends State<Register> {
                 TextFormField(
                   decoration: textInputDecoration.copyWith(hintText: 'Enter a username'),
                   validator: (val) {
-                    return val.length < 2 ? 'Enter a password +2 chars long' : null; // username unique
+                    return val.length < 2 ? 'Enter a username +2 chars long' : null; // username unique
                   },
                   onChanged: (val) {
                     setState(() {
@@ -106,7 +106,7 @@ class _RegisterState extends State<Register> {
                       setState(() {
                         loading = true;
                       });
-                      dynamic result = await _auth.registerWithEmailAndPassword(email, password, username, description, userImage);
+                      dynamic result = await _auth.registerWithEmailAndPassword(email, password);
                       if (result == null) {
                         setState(() {
                           loading = false;
