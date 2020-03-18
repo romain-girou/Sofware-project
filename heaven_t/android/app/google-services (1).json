@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "518423958025",
+    "firebase_url": "https://sofwareproject-seinajoki2020.firebaseio.com",
+    "project_id": "sofwareproject-seinajoki2020",
+    "storage_bucket": "sofwareproject-seinajoki2020.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:518423958025:android:a303911484ebab2fbc5ed8",
+        "android_client_info": {
+          "package_name": "com.SofwareProject.heavent"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "518423958025-elhadnuh6krfhft66uirndls9n6vg3lu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAjS09Uk-zHQziCcOXEzwd2JY5qg85nAek"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "518423958025-elhadnuh6krfhft66uirndls9n6vg3lu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
