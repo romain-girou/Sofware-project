@@ -11,8 +11,13 @@ class SideBar extends StatefulWidget {
   _SideBarState createState() => _SideBarState();
 }
 
-class _SideBarState extends State<SideBar>
-    with SingleTickerProviderStateMixin<SideBar> {
+class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<SideBar> {
+  
+  //Colors primary and secondary
+  final secondary_color = Color(0xFF53C999);
+  final primary_color = Color(0xFF063B6D);
+
+  //menu variable and for animation
   AnimationController _animationController;
   StreamController<bool> isSidebarOpenedStreamController;
   Stream<bool> isSidebarOpenedStream;
@@ -29,6 +34,7 @@ class _SideBarState extends State<SideBar>
     isSidebarOpenedSink = isSidebarOpenedStreamController.sink;
   }
 
+  //* Different method to control the animation of the menu
   @override
   void dispose() {
     _animationController.dispose();
@@ -36,7 +42,7 @@ class _SideBarState extends State<SideBar>
     isSidebarOpenedSink.close();
     super.dispose();
   }
-
+  //* Different method to control the animation of the menu
   void onIconPressed() {
     final animationStatus = _animationController.status;
     final isAnimationCompleted = animationStatus == AnimationStatus.completed;
@@ -69,7 +75,7 @@ class _SideBarState extends State<SideBar>
                 Expanded(
                   child: Container(
                     padding: const EdgeInsets.symmetric(horizontal: 20),
-                    color: const Color(0xFF262AAA),
+                    color: primary_color,
                     child: Column(
                       children: <Widget>[
                         SizedBox(
@@ -87,11 +93,12 @@ class _SideBarState extends State<SideBar>
                           subtitle: Text(
                             "mickaelbenasse@gmail.com",
                             style: TextStyle(
-                              color: Color(0xFF1BB5FD),
+                              color: secondary_color,
                               fontSize: 16,
                             ),
                           ),
                           leading: CircleAvatar(
+                            backgroundColor: secondary_color.withOpacity(0.8),
                             child: Icon(
                               Icons.perm_identity,
                               color: Colors.white,
@@ -102,10 +109,11 @@ class _SideBarState extends State<SideBar>
                         Divider(
                           height: 64,
                           thickness: 0.5,
-                          color: Colors.white.withOpacity(0.3),
+                          color: secondary_color.withOpacity(0.5),
                           indent: 32,
                           endIndent: 32,
                         ),
+                        //Here strart the icon to press for the navigation
                         MenuItem(
                           icon: Icons.home,
                           title: "Home",
@@ -133,7 +141,7 @@ class _SideBarState extends State<SideBar>
                         Divider(
                           height: 64,
                           thickness: 0.5,
-                          color: Colors.white.withOpacity(0.3),
+                          color: secondary_color.withOpacity(0.5),
                           indent: 32,
                           endIndent: 32,
                         ),
@@ -167,13 +175,13 @@ class _SideBarState extends State<SideBar>
                       child: Container(
                         width: 35,
                         height: 110,
-                        color: Color(0xFF262AAA),
+                        color: primary_color,
                         alignment: Alignment.centerLeft,
                         //animate as well the icon
                         child: AnimatedIcon(
                           progress: _animationController.view,
                           icon: AnimatedIcons.menu_close,
-                          color: Color(0xFF1BB5FD),
+                          color: secondary_color,
                         ),
                       ),
                     ),
