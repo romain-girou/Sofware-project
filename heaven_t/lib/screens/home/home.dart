@@ -10,6 +10,7 @@ class HomePage extends StatefulWidget with NavigationStates {
   _HomePageState createState() => _HomePageState();
 }
 
+//TODO_Add the search icon on top next to the title in a row
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
