@@ -101,7 +101,7 @@ class _EventPageState extends State<EventPage> {
                     Row(
                       children: <Widget>[
                         CircleAvatar(
-                            child: Icon(Icons.location_on,
+                            child: Icon(Icons.explore,
                                 color: primary_color, size: 20),
                             radius: 20,
                             backgroundColor: secondary_color.withOpacity(0.25)),
