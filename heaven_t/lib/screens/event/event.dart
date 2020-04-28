@@ -1,7 +1,9 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:heavent/shares/sidebar/bloc_navigation/bloc_navigation.dart';
+import 'event_class.dart';
+
+eventClass myEvent = new eventClass("Puskantie BBQ", 2021, "Monday", 03, 6 , "11:30 am", "3:00 pm", "Puskantie 38", "60100 Seinäjoki, Finland", 50, "Lorem ipsum dolor sit amet,  etur adipiscing elit, sed do eiusmod tempor incidi Lorem ipsum dolor sit amet,  etur adipiscing elit, sed do eiusmod tempor incidi Lorem ipsum dolor sit amet,  etur adipiscing elit, sed do eiusmod tempor incidi Lorem ipsum dolor sit amet,  etur adipiscing elit, sed do eiusmod tempor incidi.");
 
 class EventPage extends StatefulWidget with NavigationStates {
   @override
@@ -9,8 +11,8 @@ class EventPage extends StatefulWidget with NavigationStates {
 }
 
 class _EventPageState extends State<EventPage> {
-  final secondary_color = Color(0xFF53C999);
-  final primary_color = Color(0xFF063B6D);
+  final secondaryColor = Color(0xFF53C999);
+  final primaryColor = Color(0xFF063B6D);
 
   @override
   Widget build(BuildContext context) {
@@ -54,21 +56,22 @@ class _EventPageState extends State<EventPage> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    Text("Puskantie BBQ",
+                    Text(
+                      myEvent.name,
                         style: TextStyle(
                             fontSize: 22.0, fontWeight: FontWeight.bold)),
                     SizedBox(height: 10.0),
-                    //TODO here the listTile for the basic info: date, location, price with their logo
-                    //TODO This one for the Date
-                    //TODO So we want the row because all the info in line with the icon first
+                    //TODO_here the listTile for the basic info: date, location, price with their logo
+                    //TODO_This one for the Date
+                    //TODO_So we want the row because all the info in line with the icon first
                     Row(
                       children: <Widget>[
                         CircleAvatar(
                             child: Icon(Icons.event_note,
-                                color: primary_color, size: 20),
+                                color: primaryColor, size: 20),
                             radius: 20,
-                            backgroundColor: secondary_color.withOpacity(0.25)),
-                        //TODO here we want date and time in column but in the same lin as the icon
+                            backgroundColor: secondaryColor.withOpacity(0.25)),
+                        //TODO_here we want date and time in column but in the same lin as the icon
                         Container(
                             child: Padding(
                           padding: EdgeInsets.only(left: 10),
@@ -76,7 +79,7 @@ class _EventPageState extends State<EventPage> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
                               Text(
-                                "Sat, May 25, 2019",
+                                myEvent.dateFinal,
                                 style: TextStyle(
                                     color: Colors.black,
                                     fontSize: 17,
@@ -84,9 +87,9 @@ class _EventPageState extends State<EventPage> {
                               ),
                               SizedBox(height: 2.5),
                               Text(
-                                "12:00 am - 4:00 pm",
+                                myEvent.time,
                                 style: TextStyle(
-                                  color: primary_color,
+                                  color: primaryColor,
                                   fontSize: 14,
                                 ),
                               )
@@ -97,14 +100,14 @@ class _EventPageState extends State<EventPage> {
                     ),
 
                     SizedBox(height: 12),
-                    //TODO This one for the Location
+                    //TODO_This one for the Location
                     Row(
                       children: <Widget>[
                         CircleAvatar(
                             child: Icon(Icons.explore,
-                                color: primary_color, size: 20),
+                                color: primaryColor, size: 20),
                             radius: 20,
-                            backgroundColor: secondary_color.withOpacity(0.25)),
+                            backgroundColor: secondaryColor.withOpacity(0.25)),
                         //here we want date and time in column but in the same lin as the icon
                         Container(
                             child: Padding(
@@ -113,7 +116,7 @@ class _EventPageState extends State<EventPage> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
                               Text(
-                                "Puskantie 38",
+                                myEvent.location,
                                 style: TextStyle(
                                     color: Colors.black,
                                     fontSize: 17,
@@ -121,9 +124,9 @@ class _EventPageState extends State<EventPage> {
                               ),
                               SizedBox(height: 2.5),
                               Text(
-                                "60100 Seinäjoki, Finland",
+                                myEvent.adress,
                                 style: TextStyle(
-                                  color: primary_color,
+                                  color: primaryColor,
                                   fontSize: 14,
                                 ),
                               )
@@ -133,20 +136,20 @@ class _EventPageState extends State<EventPage> {
                       ],
                     ),
                     SizedBox(height: 12),
-                    //TODO This one for the Price
+                    //TODO_This one for the Price
                     Row(
                       children: <Widget>[
                         CircleAvatar(
                             child: Icon(Icons.euro_symbol,
-                                color: primary_color, size: 20),
+                                color: primaryColor, size: 20),
                             radius: 20,
-                            backgroundColor: secondary_color.withOpacity(0.25)),
+                            backgroundColor: secondaryColor.withOpacity(0.25)),
                         //here we want date and time in column but in the same lin as the icon
                         Container(
                           child: Padding(
                             padding: EdgeInsets.only(left: 10),
                             child: Text(
-                              "60 €",
+                              myEvent.price.toString() + " €",
                               style: TextStyle(
                                   color: Colors.black,
                                   fontSize: 17,
@@ -157,7 +160,7 @@ class _EventPageState extends State<EventPage> {
                       ],
                     ),
                     SizedBox(height: 20),
-                    //TODO Here we want the container for the description with "about" first and then the description all that wrap inside a Column
+                    //TODO_Here we want the container for the description with "about" first and then the description all that wrap inside a Column
                     Container(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -171,7 +174,7 @@ class _EventPageState extends State<EventPage> {
                           ),
                           SizedBox(height: 12.5),
                           Text(
-                            "Lorem ipsum dolor sit amet,  etur adipiscing elit, sed do eiusmod tempor incidi Lorem ipsum dolor sit amet,  etur adipiscing elit, sed do eiusmod tempor incidi Lorem ipsum dolor sit amet,  etur adipiscing elit, sed do eiusmod tempor incidi Lorem ipsum dolor sit amet,  etur adipiscing elit, sed do eiusmod tempor incidi.",
+                            myEvent.description,
                             style: TextStyle(
                               fontFamily: "Cairo",
                               fontWeight: FontWeight.w600,
@@ -190,3 +193,5 @@ class _EventPageState extends State<EventPage> {
     );
   }
 }
+
+
