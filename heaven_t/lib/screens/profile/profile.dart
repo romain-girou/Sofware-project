@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:heavent/models/event/event_1.dart';
+import 'package:heavent/models/event/event_2.dart';
+import 'package:heavent/models/event/event_4.dart';
+import 'package:heavent/models/event/event_5.dart';
 import 'package:heavent/shares/sidebar/bloc_navigation/bloc_navigation.dart';
 import 'package:heavent/screens/event/event_class.dart';
 
@@ -57,7 +61,7 @@ class ProfilePage extends StatelessWidget with NavigationStates {
                               borderRadius:
                                   BorderRadius.all(Radius.circular(15)),
                               image: DecorationImage(
-                                  image: AssetImage("assets/images/lake.jpg"),
+                                  image: AssetImage("assets/images/portrait.png"),
                                   alignment: Alignment.center,
                                   fit: BoxFit.cover),
                             ),
@@ -129,9 +133,8 @@ class ProfilePage extends StatelessWidget with NavigationStates {
             Expanded(
             child: ListView(
               children: [
-                homeEvent(myEvent.day, myEvent.month.toString(),myEvent.dateFinal, myEvent.name),
-                homeEvent(22, "May", "12:00 am - 4:00 pm", "End of school"),
-                homeEvent(22, "May", "12:00 am - 4:00 pm", "End of school"),
+                eventPage_1(),
+                eventPage_5(),
               ],
             ),
           )

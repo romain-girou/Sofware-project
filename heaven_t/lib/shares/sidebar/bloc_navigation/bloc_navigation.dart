@@ -1,12 +1,10 @@
 import 'package:bloc/bloc.dart';
-import 'package:heavent/screens/event/event.dart';
 import 'package:heavent/screens/home/home.dart';
 import 'package:heavent/screens/profile/profile.dart';
 import 'package:heavent/screens/settings/settings.dart';
 
 enum NavigationEvents {
   HomePageClickedEvent,
-  EventPageClickedEvent,
   ProfilePageClickedEvent,
   SettingPageClickedEvent,
 }
@@ -22,9 +20,6 @@ class NavigationBloc extends Bloc<NavigationEvents, NavigationStates> {
     switch (event) {
       case NavigationEvents.HomePageClickedEvent:
         yield HomePage();
-        break;
-      case NavigationEvents.EventPageClickedEvent:
-        yield EventPage();
         break;
       case NavigationEvents.ProfilePageClickedEvent:
         yield ProfilePage();

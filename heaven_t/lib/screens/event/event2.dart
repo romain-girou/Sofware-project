@@ -3,14 +3,23 @@ import 'package:flutter/material.dart';
 import 'package:heavent/shares/sidebar/bloc_navigation/bloc_navigation.dart';
 import 'event_class.dart';
 
-eventClass myEvent = new eventClass("Puskantie BBQ", 2020, "Monday", 03, 5 , "11:30 am", "3:00 pm", "Puskantie 38", "60100 Seinäjoki, Finland", 50, "Lorem ipsum dolor sit amet,  etur adipiscing elit, sed do eiusmod tempor incidi Lorem ipsum dolor sit amet,  etur adipiscing elit, sed do eiusmod tempor incidi Lorem ipsum dolor sit amet,  etur adipiscing elit, sed do eiusmod tempor incidi Lorem ipsum dolor sit amet,  etur adipiscing elit, sed do eiusmod tempor incidi.");
+eventClass myEvent = new eventClass("Hiking in the forest",
+    2020,
+    "Sat",
+    10,
+    5,
+    "9:00 am",
+    "6:00 pm",
+    "Kyrkösjärven",
+    "60100 Seinäjoki, Finland",
+    10, "Lorem ipsum dolor sit amet,  etur adipiscing elit, sed do eiusmod tempor incidi Lorem ipsum dolor sit amet,  etur adipiscing elit, sed do eiusmod tempor incidi Lorem ipsum dolor sit amet,  etur adipiscing elit, sed do eiusmod tempor incidi Lorem ipsum dolor sit amet,  etur adipiscing elit, sed do eiusmod tempor incidi.");
 
-class EventPage extends StatefulWidget with NavigationStates {
+class EventPage2 extends StatefulWidget with NavigationStates {
   @override
   _EventPageState createState() => _EventPageState();
 }
 
-class _EventPageState extends State<EventPage> {
+class _EventPageState extends State<EventPage2> {
   final secondaryColor = Color(0xFF53C999);
   final primaryColor = Color(0xFF063B6D);
 
@@ -29,7 +38,7 @@ class _EventPageState extends State<EventPage> {
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage("assets/images/event_im_example.jpg"),
+                  image: AssetImage("assets/images/landscape_2.jpg"),
                   //! See for the alignement under the status bar instead of below
                   alignment: Alignment.topCenter,
                   fit: BoxFit.fitWidth,

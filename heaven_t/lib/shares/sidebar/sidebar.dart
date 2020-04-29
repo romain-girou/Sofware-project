@@ -11,8 +11,8 @@ class SideBar extends StatefulWidget {
   _SideBarState createState() => _SideBarState();
 }
 
-class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<SideBar> {
-  
+class _SideBarState extends State<SideBar>
+    with SingleTickerProviderStateMixin<SideBar> {
   //Colors primary and secondary
   final secondary_color = Color(0xFF53C999);
   final primary_color = Color(0xFF063B6D);
@@ -42,6 +42,7 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
     isSidebarOpenedSink.close();
     super.dispose();
   }
+
   //* Different method to control the animation of the menu
   void onIconPressed() {
     final animationStatus = _animationController.status;
@@ -98,14 +99,13 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
                             ),
                           ),
                           leading: CircleAvatar(
-                            backgroundColor: secondary_color.withOpacity(0.8),
-                            child: Icon(
-                              Icons.perm_identity,
-                              color: Colors.white,
+                            radius: 30,
+                            backgroundImage: ExactAssetImage("assets/images/portrait_1.png"),
+                            
+                              
                             ),
-                            radius: 40,
                           ),
-                        ),
+                        
                         Divider(
                           height: 64,
                           thickness: 0.5,
@@ -117,25 +117,20 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
                         MenuItem(
                           icon: Icons.home,
                           title: "Home",
-                          onTap: (){
+                          onTap: () {
                             onIconPressed();
-                           BlocProvider.of<NavigationBloc>(context).add(NavigationEvents.HomePageClickedEvent);
+                            BlocProvider.of<NavigationBloc>(context)
+                                .add(NavigationEvents.HomePageClickedEvent);
                           },
                         ),
-                        MenuItem(
-                          icon: Icons.event,
-                          title: "Events",
-                          onTap: (){
-                            onIconPressed();
-                           BlocProvider.of<NavigationBloc>(context).add(NavigationEvents.EventPageClickedEvent);
-                          },
-                        ),
+
                         MenuItem(
                           icon: Icons.person,
                           title: "Profile",
-                          onTap: (){
+                          onTap: () {
                             onIconPressed();
-                           BlocProvider.of<NavigationBloc>(context).add(NavigationEvents.ProfilePageClickedEvent);
+                            BlocProvider.of<NavigationBloc>(context)
+                                .add(NavigationEvents.ProfilePageClickedEvent);
                           },
                         ),
                         Divider(
@@ -148,9 +143,10 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
                         MenuItem(
                           icon: Icons.settings,
                           title: "Settings",
-                          onTap: (){
+                          onTap: () {
                             onIconPressed();
-                           BlocProvider.of<NavigationBloc>(context).add(NavigationEvents.SettingPageClickedEvent);
+                            BlocProvider.of<NavigationBloc>(context)
+                                .add(NavigationEvents.SettingPageClickedEvent);
                           },
                         ),
                         MenuItem(
@@ -195,9 +191,7 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
 }
 
 //function to the shape of the menu clipper
-class CustomMenuClipper extends CustomClipper <Path> {
-
-
+class CustomMenuClipper extends CustomClipper<Path> {
   @override
   Path getClip(Size size) {
     Paint paint = Paint();
@@ -209,12 +203,11 @@ class CustomMenuClipper extends CustomClipper <Path> {
     Path path = Path();
     path.moveTo(0, 0);
     path.quadraticBezierTo(0, 8, 10, 16);
-    path.quadraticBezierTo(width-1, height/2-20, width, height/2);
-    path.quadraticBezierTo(width+1, height/2 +20, 10, height-16);
-    path.quadraticBezierTo(0, height -8 , 0, height);
+    path.quadraticBezierTo(width - 1, height / 2 - 20, width, height / 2);
+    path.quadraticBezierTo(width + 1, height / 2 + 20, 10, height - 16);
+    path.quadraticBezierTo(0, height - 8, 0, height);
 
     path.close();
-
 
     return path;
   }
@@ -223,5 +216,4 @@ class CustomMenuClipper extends CustomClipper <Path> {
   bool shouldReclip(CustomClipper<Path> oldClipper) {
     return true;
   }
-
 }
